@@ -6,8 +6,11 @@ export default function CartItem ({id, name, price, qty}) {
         <div>
             <div>{name}</div>
             <div>${price}</div>
+            <button onClick>+</button>
             <div>{qty}</div>
+            <button onClick>-</button>
             <div>Total:{qty * price}</div>
+            <hr></hr>
         </div>
         //Second Way
         // <div>

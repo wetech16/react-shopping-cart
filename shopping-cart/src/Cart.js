@@ -3,6 +3,7 @@ import CartItem from './CartItem';
 
 //2nd way: function Cart(props)
 export default function Cart({items}) {
+    const grandTotal = items.reduce((accu, currentValue) => accu + currentValue.qty * currentValue.price,0);
 
       return (
         <div>
@@ -20,11 +21,9 @@ export default function Cart({items}) {
                     //name={item.name}
                     //price={item.price}
                     //qty={item.qty}
-                    
-                    
                 )
-              
             }
+            <h1>GrandTotal: {grandTotal}</h1>
         </div>
       );
     
