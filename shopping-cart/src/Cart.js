@@ -1,4 +1,5 @@
 import React from 'react'
+import CartItem from './CartItem';
 
 //2nd way: function Cart(props)
 export default function Cart({items}) {
@@ -10,7 +11,16 @@ export default function Cart({items}) {
                 //2nd way: props.items.map()
                 items.map( (item) => 
                     
-                    <div> Name:{item.name} </div>
+                    <CartItem 
+                    key={item.id}
+                    //2nd Way: cart={item}
+                    {...item} />
+                    //{...item} should be written 
+                    //id={item.id}
+                    //name={item.name}
+                    //price={item.price}
+                    //qty={item.qty}
+                    
                     
                 )
               
