@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CartItem from './CartItem';
 
 //2nd way: function Cart(props)
 export default function Cart({items}) {
-    const [carts, setCart] = useState(items)
-
+    //local Storage initialState
+    const initialState = JSON.parse(window.localStorage.getItem('carts'))
+    const [carts, setCart] = useState(initialState || items)
+    //useEffect(,[carts]) => create localstorage
+    useEffect(() =>{
+        window.localStorage.setItem('carts', JSON.stringify(carts))
+    },[carts])
     const updateQty =(id, newQty) => {
         const newItem = carts.map(item => {
             if(item.id === id){
