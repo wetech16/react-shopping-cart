@@ -1,18 +1,12 @@
 import React from 'react'
 
 //2nd way: function CartItem (pros)
-export default function CartItem ({id, name, price, qty, updateQty}) {
+export default function CartItem ({id, name, price, qty}) {
     return (
-        
         <div>
             <div>{name}</div>
             <div>${price}</div>
-            <div>
-            {/* //Style and make some rules for the button */}
-                <button onClick={() => {updateQty(id, qty-1)}} disabled={qty<=1}>-</button>
-                    {qty}
-                <button onClick={() => {updateQty(id, qty+1) }} >+</button>
-            </div>
+            <div>{qty}</div>
             <div>Total:{qty * price}</div>
         </div>
         //Second Way
