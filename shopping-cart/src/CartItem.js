@@ -8,9 +8,10 @@ export default function CartItem ({id, name, price, qty, updateQty}) {
             <div>{name}</div>
             <div>${price}</div>
             <div>
-                <button onClick={() => {updateQty(id, qty-1)}}>-</button>
+            {/* //Style and make some rules for the button */}
+                <button onClick={() => {updateQty(id, qty-1)}} disabled={qty<=1}>-</button>
                     {qty}
-                <button onClick={() => {updateQty(id, qty+1)}}>+</button>
+                <button onClick={() => {updateQty(id, qty+1) }} >+</button>
             </div>
             <div>Total:{qty * price}</div>
         </div>
