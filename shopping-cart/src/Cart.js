@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CartItem from './CartItem';
+import './Cart.css'
 
 //2nd way: function Cart(props)
 export default function Cart({items}) {
@@ -26,8 +27,9 @@ export default function Cart({items}) {
         ).toFixed(2)
 
       return (
-        <div>
-            <h1>I AM CART</h1>
+        <div className="Cart">
+            <h1 className="Cart-title">I AM CART</h1>
+            <div className="Cart-items"></div>
             {
                 //2nd way: props.items.map()
                 carts.map( (item) =>     
@@ -45,7 +47,11 @@ export default function Cart({items}) {
                     
                 )
             }
-            <h2>grandTotal{grandTotal}</h2>
+            <h2 className="Cart-total">
+            
+                <div>GrandTotal: {grandTotal}</div>
+            
+            </h2>
         </div>
       );
     

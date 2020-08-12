@@ -1,10 +1,11 @@
 import React from 'react'
+import './CartItem.css'
 
 //2nd way: function CartItem (pros)
 export default function CartItem ({id, name, price, qty, updateQty}) {
     return (
         
-        <div>
+        <div className="CartItem">
             <div>{name}</div>
             <div>${price}</div>
             <div>
