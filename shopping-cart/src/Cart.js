@@ -28,7 +28,7 @@ export default function Cart({items}) {
 
       return (
         <div className="Cart">
-            <h1 className="Cart-title">I AM CART</h1>
+            <h1 className="Cart-title">Shopping Cart</h1>
             <div className="Cart-items"></div>
             {
                 //2nd way: props.items.map()
